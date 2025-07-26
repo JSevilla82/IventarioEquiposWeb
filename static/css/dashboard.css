@@ -1,0 +1,155 @@
+/* static/css/dashboard.css */
+
+/* ================================================= */
+/* ===== ESTILOS DEL PANEL DE CONTROL (DASHBOARD) == */
+/* ================================================= */
+
+.panel-contenedor {
+    display: flex;
+    height: 100vh;
+}
+
+/* --- Barra Lateral --- */
+.barra-lateral {
+    width: 250px;
+    background-color: var(--dark-grey);
+    border-right: 1px solid var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    transition: width 0.3s ease;
+}
+
+.encabezado-sidebar {
+    padding: 0 20px 20px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--hover-color);
+}
+
+.logo {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.titulo-sidebar {
+    font-size: 0.9em;
+    color: var(--text-color);
+}
+
+.navegacion-principal ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+/* Estilo para el título de cada menú principal (ej. Admin. Equipos) */
+.navegacion-principal .item-menu .titulo-menu {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.navegacion-principal .item-menu .titulo-menu:hover {
+    background-color: var(--hover-color);
+}
+
+.navegacion-principal .item-menu .titulo-menu i {
+    width: 30px;
+    margin-right: 15px;
+    color: var(--primary-color);
+}
+
+.navegacion-principal .item-menu .flecha {
+    margin-left: auto; /* Empuja la flecha a la derecha */
+    transition: transform 0.3s ease;
+}
+
+/* Estilos del submenú (inicialmente oculto) */
+.submenu {
+    list-style: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.submenu li a {
+    display: block;
+    padding: 12px 20px 12px 65px; /* Indentación para los sub-items */
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.submenu li a:hover {
+    background-color: var(--hover-color);
+}
+
+/* Cuando un menú está activo/abierto, la flecha gira y el submenú se muestra */
+.item-menu.activo > .titulo-menu .flecha {
+    transform: rotate(180deg);
+}
+
+.item-menu.activo > .submenu {
+    max-height: 500px; /* Un valor alto para permitir que se expanda */
+}
+
+/* --- Contenido Principal --- */
+.contenido-principal {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.encabezado-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--dark-grey);
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.titulo-modulo h2 {
+    color: var(--primary-color);
+    font-size: 1.5em;
+}
+
+.info-usuario {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.boton-logout {
+    color: var(--error-color);
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid var(--error-color);
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+.boton-logout:hover {
+    background-color: var(--error-color);
+    color: var(--text-color);
+}
+
+.contenido-modulo {
+    padding: 30px;
+}
+
+.tarjeta-bienvenida {
+    background-color: var(--dark-grey);
+    border-left: 4px solid var(--primary-color);
+    padding: 30px;
+}
+.tarjeta-bienvenida h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}

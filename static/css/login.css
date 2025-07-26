@@ -1,0 +1,56 @@
+/* static/css/login.css */
+
+.contenedor-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 50px);
+    text-align: center;
+}
+
+.encabezado-login h1 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.tarjeta-login {
+    background-color: var(--card-background);
+    padding: 40px;
+    border: 1px solid var(--primary-color);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    max-width: 400px;
+}
+
+.tarjeta-login h2 {
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+.boton-login {
+    width: 100%; padding: 15px; background: transparent;
+    border: 2px solid var(--primary-color); color: var(--primary-color);
+    font-family: inherit; font-size: 1.2em; font-weight: bold;
+    cursor: pointer; transition: all 0.3s ease;
+}
+
+.boton-login:hover {
+    background: var(--primary-color);
+    color: var(--background-color);
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
+/* Animación de Login */
+.titulo-animado {
+    color: var(--primary-color);
+    text-shadow: 0 0 8px var(--primary-color);
+    animation: fade-in-glow 2s ease-in-out forwards;
+}
+
+@keyframes fade-in-glow {
+    0% { opacity: 0; text-shadow: 0 0 0px transparent; }
+    50% { opacity: 0.8; text-shadow: 0 0 20px var(--primary-color); }
+    100% { opacity: 1; text-shadow: 0 0 8px var(--primary-color); }
+}

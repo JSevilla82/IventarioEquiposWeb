@@ -1,0 +1,80 @@
+/* static/css/global.css */
+
+/* --- VARIABLES Y ESTILOS BASE --- */
+:root {
+    --primary-color: #00ff41; 
+    --background-color: #1a1a1a;
+    --card-background: rgba(42, 42, 42, 0.7);
+    --text-color: #e0e0e0;
+    --dark-grey: #2a2a2a;
+    --hover-color: #3f3f3f;
+    --error-color: #ff4d4d;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Fira Code', 'Consolas', monospace;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-principal { flex: 1; }
+
+/* --- COMPONENTES COMPARTIDOS (BOTONES, INPUTS, ETC) --- */
+.grupo-entrada {
+    position: relative;
+    margin-bottom: 25px;
+}
+.grupo-entrada i {
+    position: absolute; left: 15px; top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-color);
+}
+.grupo-entrada input {
+    width: 100%; padding: 15px 15px 15px 45px;
+    background: var(--dark-grey);
+    border: none; border-bottom: 2px solid var(--text-color);
+    color: var(--text-color); font-family: inherit;
+    font-size: 1em; transition: border-color 0.3s ease;
+}
+.grupo-entrada input:focus {
+    outline: none;
+    border-bottom-color: var(--primary-color);
+}
+.mensaje-flash.error {
+    color: var(--error-color);
+    background-color: rgba(255, 77, 77, 0.1);
+    border: 1px solid var(--error-color);
+    padding: 10px; margin-bottom: 20px; text-align: left;
+}
+
+
+/* --- FOOTER (COMPARTIDO) --- */
+footer {
+    display: flex; justify-content: space-between;
+    align-items: center; padding: 10px 20px;
+    background-color: var(--dark-grey);
+    border-top: 1px solid var(--primary-color);
+    font-size: 0.8em; margin-top: auto;
+}
+.indicador-estado { display: flex; align-items: center; gap: 8px; }
+.luz-estado {
+    width: 10px; height: 10px;
+    background-color: var(--primary-color);
+    border-radius: 50%; animation: blink 1.5s infinite;
+}
+.texto-estado { color: var(--primary-color); font-weight: bold; }
+
+/* --- ANIMACIONES GLOBALES --- */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
