@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Inventario de Equipos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="terminal">
+        <div id="output"></div>
+
+        <div class="prompt-line">
+            <span id="prompt-label">> </span>
+            <input type="text" id="input" autofocus autocomplete="off" spellcheck="false">
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
+    
+    <script src="{{ url_for('static', filename='client.js') }}"></script>
+</body>
+</html>
